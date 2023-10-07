@@ -1,11 +1,36 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(bcksrje.jpg);
+    /* background: url(bcksrje.jpg); */
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+    background: linear-gradient(to right, #00416a, #7096dd);
   }
+  .card-body {
+    background: linear-gradient(10deg,#2193b0,#6dd5ed);
+  
+  }
+  
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .card-body {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      color: rgb(0, 0, 0);
+
+
+    }
+  }
+  #addBtn{
+    background: #166aaa;
+    color: #ffffff;
+  }
+  #addBtn:hover {
+    color: #000000;
+    background: #1dfff0;
+    box-shadow: 0 0 30px #1dfff0;
+    border-color: white;
+}
   
   .loginbox {
     width: 320px;
