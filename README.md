@@ -25,7 +25,7 @@ We welcome contributions from developers of all levels of experience. To contrib
 2. **Clone the Repository**: Use Git to clone the forked repository to your local machine.
    
    ```
-   git clone https://github.com/your-username/hacktoberfest-project.git
+   git clone https://github.com/CareerDevelopmentHub/magic-notes.git
     ```
 3. **Create a Branch**: Create a new branch for your contribution
     ```
