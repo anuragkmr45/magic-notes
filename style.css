@@ -4,7 +4,7 @@ body {
     /* background: url(bcksrje.jpg); */
     background-size: cover;
     background-position: center;
-    font-family: sans-serif;
+    font-family: Comic Sans MS, Comic Sans, cursive;
     background: linear-gradient(to right, #00416a, #7096dd);
   }
   .card-body {
@@ -59,6 +59,7 @@ body {
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
+    
   }
   
   .loginbox p {
