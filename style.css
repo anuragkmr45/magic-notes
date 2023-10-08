@@ -109,3 +109,6 @@ body {
   .loginbox a:hover {
     color: #ffc107;
   }
+  #addBtn:focus{
+    background-color: #7096dd;
+  }
