@@ -45,6 +45,7 @@ function showNotes() {
     notesElm.innerHTML = html;
   } else {
     notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes.`;
+    notesElm.style.color = "rgb(162, 240, 255)";
   }
 }
 
