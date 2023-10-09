@@ -20,6 +20,7 @@ For more information about Hacktoberfest, visit [Hacktoberfest Official Website]
 
 We welcome contributions from developers of all levels of experience. To contribute to our project for Hacktoberfest, follow these steps:
 
+0. **Star the repo**: Star the repo by pressing the topmost-right button to start your wonderful journey.
 1. **Fork the Repository**: Click the "Fork" button at the top right of the project's GitHub page to create your own copy of the repository.
 
 2. **Clone the Repository**: Use Git to clone the forked repository to your local machine.
