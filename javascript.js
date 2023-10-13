@@ -25,7 +25,13 @@ addBtn.addEventListener("click", function (e) {
   } else {
     notesObj = JSON.parse(notes);
   }
-  notesObj.push(addTxt.value);
+
+  let note = {
+    "text": addTxt.value,
+    "timestamp": new Date().toJSON()
+  };
+
+  notesObj.push(note);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   addTxt.value = "";
   //   console.log(notesObj);
@@ -41,12 +47,18 @@ function showNotes() {
     notesObj = JSON.parse(notes);
   }
   let html = "";
+
   notesObj.forEach(function (element, index) {
+    let date = new Date(element.timestamp);
+    let dateLocale = date.toLocaleDateString();
+    let timeLocale = date.toLocaleTimeString();
     html += `
             <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Note ${index + 1}</h5>
-                        <p class="card-text"> ${element}</p>
+                        <h8>Posted: ${dateLocale} - ${timeLocale}</h8>
+                        <hr color="#fff"/>
+                        <p class="card-text"> ${element.text}</p>
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                     </div>
                 </div>`;
