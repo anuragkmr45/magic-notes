@@ -4,7 +4,6 @@ showNotes();
 // If user adds a note, add it to the localStorage
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
-  console.log("fak");
   e.preventDefault();
 
   let addTxt = document.getElementById("addTxt");
@@ -27,8 +26,9 @@ addBtn.addEventListener("click", function (e) {
   }
 
   let note = {
-    "text": addTxt.value,
-    "timestamp": new Date().toJSON()
+    text: addTxt.value,
+    timestamp: new Date().toJSON(),
+    important: false,
   };
 
   notesObj.push(note);
@@ -52,10 +52,16 @@ function showNotes() {
     let date = new Date(element.timestamp);
     let dateLocale = date.toLocaleDateString();
     let timeLocale = date.toLocaleTimeString();
+    let starClass = element.important
+      ? "fa-solid fa-star star-important"
+      : "fa-regular fa-star";
     html += `
             <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Note ${index + 1}</h5>
+                        <div class="noteHead">
+                          <h5 class="card-title">Note ${index + 1}</h5>
+                          <i class="${starClass}" onclick="toggleStar(${index})"></i>
+                        </div>
                         <h8>Posted: ${dateLocale} - ${timeLocale}</h8>
                         <hr color="#fff"/>
                         <p class="card-text"> ${element.text}</p>
@@ -71,6 +77,22 @@ function showNotes() {
     notesElm.style.color = "rgb(162, 240, 255)";
   }
 }
+
+function toggleStar(index) {
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+
+  notesObj[index].important = !notesObj[index].important;
+
+  localStorage.setItem("notes", JSON.stringify(notesObj));
+
+  showNotes();
+}
+
 
 // Function to delete a note
 function deleteNote(index) {
