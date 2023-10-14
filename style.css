@@ -122,3 +122,11 @@ input[type="password"] {
   border: 1px solid #f00;
   border-radius: 5px;
 }
+
+.unchecked{
+  color: white;
+}
+
+.checked{
+  color : yellow;
+}
