@@ -71,7 +71,7 @@ addBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   let addTxt = document.getElementById("addTxt");
-
+  
   if (!addTxt.value.trim()) {
     const toast = document.getElementById("emptyFormToast");
     toast.style.display = "block";
@@ -82,13 +82,21 @@ addBtn.addEventListener("click", function (e) {
   }
 
   let notes = localStorage.getItem("notes");
+  
+  let newNote = {
+    txt: addTxt.value,
+    fav: false,
+  }
 
   if (notes == null) {
     notesObj = [];
   } else {
     notesObj = JSON.parse(notes);
   }
-
+  
+  
+  notesObj.push(newNote);
+  
   let note = {
     text: addTxt.value,
     timestamp: new Date().toJSON(),
@@ -101,6 +109,8 @@ addBtn.addEventListener("click", function (e) {
   };
 
   notesObj.push(note);
+
+  
   localStorage.setItem("notes", JSON.stringify(notesObj));
   addTxt.value = "";
   //   console.log(notesObj);
@@ -118,6 +128,15 @@ function showNotes() {
   let html = "";
 
   notesObj.forEach(function (element, index) {
+
+    let className = element.fav ? `fa fa-star checked` : `fa fa-star unchecked`;
+
+    html += `
+            <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Note ${index + 1}</h5>
+                        <p class="card-text"> ${element.txt}</p>
+
     let date = new Date(element.timestamp);
     let dateLocale = date.toLocaleDateString();
     let timeLocale = date.toLocaleTimeString();
@@ -134,7 +153,9 @@ function showNotes() {
                         <h8>Posted: ${dateLocale} - ${timeLocale}</h8>
                         <hr color="#fff"/>
                         <p class="card-text"> ${element.text}</p>
+
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
+                        <div><i id="favFlag" class="${className}" onClick=saveFavorite(${index})></i></div>
                     </div>
                 </div>`;
   });
@@ -178,8 +199,20 @@ function deleteNote(index) {
   showNotes();
 }
 
+// Function to save as favorite
+function saveFavorite(index){
 
-
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+  let favFlag = notesObj[index].fav;
+  notesObj[index].fav = favFlag ? false : true;
+  localStorage.setItem("notes", JSON.stringify(notesObj));
+  showNotes();
+}
 
 
 let search = document.getElementById("searchTxt");
