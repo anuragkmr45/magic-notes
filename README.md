@@ -50,28 +50,26 @@ We welcome contributions from developers of all levels of experience. To contrib
 
 2. **Clone the Repository**: Use Git to clone the forked repository to your local machine.
    
-   ```
-   git clone https://github.com/CareerDevelopmentHub/magic-notes.git
     ```
+    git clone https://github.com/CareerDevelopmentHub/magic-notes.git
+    ```
+
 3. **Create a Branch**: Create a new branch for your contribution
     ```
-        git checkout -b feature/my-contribution
-
+    git checkout -b feature/my-contribution
     ```
 
 4. **Make Changes**: Make your desired changes to the project. This can include bug fixes, feature additions, documentation improvements, etc
 
 5. **Commit Changes**: Commit your changes with a descriptive commit message.
-```
+    ```
     git commit -m "Add feature: my contribution"
-
-```
+    ```
 
 6. **Push Changes**: Push your changes to your forked repository on GitHub.
-```
-git push origin feature/my-contribution
-
-```
+    ```
+    git push origin feature/my-contribution
+    ```
 
 7. **Create a Pull Request**: Go to the original project's GitHub page and click the "New Pull Request" button. Compare your branch to the main branch and create the pull request.
 
