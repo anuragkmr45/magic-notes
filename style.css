@@ -129,4 +129,18 @@ input[type="password"] {
 
 .checked{
   color : yellow;
+
+.noteHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fa-star {
+    cursor: pointer; 
+}
+
+.star-important {
+    color: gold;
+
 }
