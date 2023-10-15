@@ -25,15 +25,16 @@
           <button class="btn btn-primary" id="addBtn">Add Note</button>
         </form>
       </div>
-      
-      <hr />
-      <h1 style="color: rgb(162, 240, 255)">Your Notes</h1>
-      <hr />
-      <div id="notes" class="row container-fluid"></div>
-
     </div>
     <hr />
     <h1 style="color: rgb(162, 240, 255)">Your Notes</h1>
+    <label for="sortNotesDropdown" style="color: rgb(162, 240, 255)">Sort notes by:</label>
+    <select id="sortNotesDropdown" onchange="sortNotes(this.value)">
+      <option value="dateAsc">Date Ascending</option>
+      <option value="dateDesc">Date Descending</option>
+      <option value="importance">Importance</option>
+      <option value="wordCount">Word Count</option>
+    </select>
     <hr />
     <div id="notes" class="row container-fluid"></div>
   </div>

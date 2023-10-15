@@ -1,69 +1,5 @@
 console.log("Welcome to notes app. This is app.js");
-
 showNotes();
-
-
-// Function to show elements from localStorage
-function showNotes() {
-  let notes = localStorage.getItem("notes");
-  if (notes == null) {
-    notesObj = [];
-  } else {
-    notesObj = JSON.parse(notes);
-  }
-  let html = "";
-
-  notesObj.forEach(function (element, index) {
-    let date = new Date(element.timestamp);
-    let dateLocale = date.toLocaleDateString();
-    let timeLocale = date.toLocaleTimeString();
-
-    html += `
-            <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Note ${index + 1}</h5>
-                    <h8>${element.isEdited?'Edited': 'Posted'}: ${dateLocale} - ${timeLocale}</h8>
-                    <hr color="#fff"/>
-                    <p class="card-text"> ${element.text}</p>
-                    <button id="${index}"onclick="editNote(this.id)" class="btn btn-primary">Edit</button>
-                    <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
-                </div>
-            </div>`;
-  });
-  let notesElm = document.getElementById("notes");
-  if (notesObj.length != 0) {
-    notesElm.innerHTML = html;
-  } else {
-    notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes.`;
-    notesElm.style.color = "rgb(162, 240, 255)";
-  }
-}
-
-// edit a particular note
-function editNote(index) {
-  const notes = JSON.parse(localStorage.getItem("notes")) || [];
-  const editedNote = prompt("Edit note:", ""); // Provide an empty string
-
-  if (editedNote !== null) {
-      const currentDate = new Date();
-      const updatedDate = currentDate.toLocaleDateString();
-      const updatedTime = currentDate.toLocaleTimeString();
-      const editedContent = editedNote;
-
-      // Update the note in the array
-      notes[index] = {
-          text: editedContent,
-          timestamp: currentDate.toJSON(),
-          isEdited: true
-      };
-
-      localStorage.setItem("notes", JSON.stringify(notes));
-      showNotes(); // Refresh the notes
-  }
-}
-
-
-
 
 // If user adds a note, add it to the localStorage
 let addBtn = document.getElementById("addBtn");
@@ -93,11 +29,6 @@ addBtn.addEventListener("click", function (e) {
     text: addTxt.value,
     timestamp: new Date().toJSON(),
     important: false,
-
-    "text": addTxt.value,
-    "timestamp": new Date().toJSON(),
-    "isEdited": false
-
   };
 
   notesObj.push(note);
@@ -107,14 +38,8 @@ addBtn.addEventListener("click", function (e) {
   showNotes();
 });
 
-// Function to show elements from localStorage
-function showNotes() {
-  let notes = localStorage.getItem("notes");
-  if (notes == null) {
-    notesObj = [];
-  } else {
-    notesObj = JSON.parse(notes);
-  }
+// function to show notes so the sort option will not stored in localstorage
+function displayNotes() {
   let html = "";
 
   notesObj.forEach(function (element, index) {
@@ -147,6 +72,19 @@ function showNotes() {
   }
 }
 
+// show element from localstorage
+function showNotes() {
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+
+  displayNotes(notesObj);
+}
+
+// toggle important note
 function toggleStar(index) {
   let notes = localStorage.getItem("notes");
   if (notes == null) {
@@ -162,14 +100,41 @@ function toggleStar(index) {
   showNotes();
 }
 
-// Function to delete a note
-function deleteNote(index) {
-  //   console.log("I am deleting", index);
-
+// sort notes
+function sortNotes(criteria) {
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
-  } else { 
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+
+  switch (criteria) {
+    case "dateAsc":
+      notesObj.sort(sortByDateAscending);
+      break;
+    case "dateDesc":
+      notesObj.sort(sortByDateDescending);
+      break;
+    case "importance":
+      notesObj.sort(sortByImportance);
+      break;
+    case "wordCount":
+      notesObj.sort(sortByWordCount);
+      break;
+    default:
+      break;
+  }
+
+  displayNotes(notesObj);
+}
+
+// Function to delete a note
+function deleteNote(index) {
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
     notesObj = JSON.parse(notes);
   }
 
@@ -177,10 +142,6 @@ function deleteNote(index) {
   localStorage.setItem("notes", JSON.stringify(notesObj));
   showNotes();
 }
-
-
-
-
 
 let search = document.getElementById("searchTxt");
 search.addEventListener("input", function () {
@@ -198,6 +159,21 @@ search.addEventListener("input", function () {
   });
 });
 
+function sortByDateAscending(a, b) {
+  return new Date(a.timestamp) - new Date(b.timestamp);
+}
+
+function sortByDateDescending(a, b) {
+  return new Date(b.timestamp) - new Date(a.timestamp);
+}
+
+function sortByImportance(a, b) {
+  return a.important === b.important ? 0 : a.important ? -1 : 1;
+}
+
+function sortByWordCount(a, b) {
+  return a.text.split(" ").length - b.text.split(" ").length;
+}
 /*
 Further Features:
 1. Separate notes by user
