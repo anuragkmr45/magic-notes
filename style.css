@@ -123,6 +123,13 @@ input[type="password"] {
   border-radius: 5px;
 }
 
+.unchecked{
+  color: white;
+}
+
+.checked{
+  color : yellow;
+
 .noteHead {
   display: flex;
   flex-direction: row;
@@ -135,4 +142,5 @@ input[type="password"] {
 
 .star-important {
     color: gold;
+
 }
