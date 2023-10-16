@@ -7,6 +7,7 @@ body {
   font-family: Comic Sans MS, Comic Sans, cursive;
   background: linear-gradient(to right, #00416a, #7096dd);
 }
+
 .card-body {
   background: linear-gradient(10deg, #2193b0, #6dd5ed);
 }
@@ -18,10 +19,12 @@ body {
     color: rgb(0, 0, 0);
   }
 }
+
 #addBtn {
   background: #166aaa;
   color: #ffffff;
 }
+
 #addBtn:hover {
   color: #000000;
   background: #1dfff0;
@@ -123,12 +126,13 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-.unchecked{
+.unchecked {
   color: white;
 }
 
-.checked{
-  color : yellow;
+.checked {
+  color: yellow;
+}
 
 .noteHead {
   display: flex;
@@ -137,10 +141,9 @@ input[type="password"] {
 }
 
 .fa-star {
-    cursor: pointer; 
+  cursor: pointer;
 }
 
 .star-important {
-    color: gold;
-
+  color: gold;
 }
