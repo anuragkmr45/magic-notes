@@ -47,13 +47,6 @@ function displayNotes() {
   notesObj.forEach(function (element, index) {
 
     let className = element.fav ? `fa fa-star checked` : `fa fa-star unchecked`;
-
-    // html += `
-    //         <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-    //                 <div class="card-body">
-    //                     <h5 class="card-title">Note ${index + 1}</h5>
-    //                     <p class="card-text"> ${element.txt}</p>`
-
     let date = new Date(element.timestamp);
     let dateLocale = date.toLocaleDateString();
     let timeLocale = date.toLocaleTimeString();
@@ -198,7 +191,7 @@ function sortByDateDescending(a, b) {
 }
 
 function sortByImportance(a, b) {
-  return a ? .fav === b ? .fav ? 0 : a ? .fav ? -1 : 1;
+  return a?.fav === b?.fav ? 0 : a?.fav ? -1 : 1;
 }
 
 function sortByWordCount(a, b) {
