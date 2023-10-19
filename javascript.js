@@ -1,5 +1,6 @@
 console.log("Welcome to notes app. This is app.js");
 showNotes();
+let notes = [];
 
 // If user adds a note, add it to the localStorage
 let addBtn = document.getElementById("addBtn");
@@ -165,23 +166,6 @@ function saveFavorite(index) {
 }
 
 
-
-let search = document.getElementById("searchTxt");
-search.addEventListener("input", function () {
-  let inputVal = search.value.toLowerCase();
-  // console.log('Input event fired!', inputVal);
-  let noteCards = document.getElementsByClassName("noteCard");
-  Array.from(noteCards).forEach(function (element) {
-    let cardTxt = element.getElementsByTagName("p")[0].innerText;
-    if (cardTxt.includes(inputVal)) {
-      element.style.display = "block";
-    } else {
-      element.style.display = "none";
-    }
-    // console.log(cardTxt);
-  });
-});
-
 function sortByDateAscending(a, b) {
   return new Date(a.timestamp) - new Date(b.timestamp);
 }
@@ -197,6 +181,19 @@ function sortByImportance(a, b) {
 function sortByWordCount(a, b) {
   return a.text.split(" ").length - b.text.split(" ").length;
 }
+
+//Search the note
+const searchNote = document.querySelector("[note-search]");
+
+searchNote.addEventListener("input", (elem) => {
+  const values = elem.target.value.toLowerCase();
+  let noteCards = document.getElementsByClassName("noteCard");
+  Array.from(noteCards).forEach( (noteCard) => {
+    const isAvailable = noteCard.getElementsByTagName("p")[0].innerText.toLowerCase().includes(values);
+    noteCard.classList.toggle("hide", !isAvailable);
+  })
+})
+
 /*
 Further Features:
 1. Separate notes by user
