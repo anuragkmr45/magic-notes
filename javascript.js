@@ -72,6 +72,7 @@ function displayNotes() {
     let notesElm = document.getElementById("notes");
     if (notesObj.length != 0) {
         notesElm.innerHTML = html;
+        notesElm.style.color = "black";
     } else {
         notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes.`;
         notesElm.style.color = "white";
