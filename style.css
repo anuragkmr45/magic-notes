@@ -147,3 +147,19 @@ input[type="password"] {
 .star-important {
   color: gold;
 }
+
+
+/* Search box */
+.search-bar{
+  gap: 0.25rem;
+}
+
+input{
+  max-width: 300px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.hide{
+  display: none;
+}
