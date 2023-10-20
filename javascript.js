@@ -74,7 +74,7 @@ function displayNotes() {
         notesElm.innerHTML = html;
     } else {
         notesElm.innerHTML = `Nothing to show! Use "Add a Note" section above to add notes.`;
-        notesElm.style.color = "black";
+        notesElm.style.color = "white";
     }
 }
 
