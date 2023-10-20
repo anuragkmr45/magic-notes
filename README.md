@@ -86,3 +86,5 @@ The app also uses JavaScript to handle the following functionality:
 2)Displays a toast notification if the note form is empty.
 3)Deletes a note when the user clicks the delete button.
 4)Overall, the HTML code you provided is for a simple but functional notes app. It uses Bootstrap to create a 5)5)5)responsive and visually appealing layout, and it uses JavaScript to handle basic functionality such as form validation and note deletion.
+
+![image](Hactoberfest.png)
