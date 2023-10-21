@@ -1,11 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
-  /* background: url(bcksrje.jpg); */
-  background-size: cover;
-  background-position: center;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  background: linear-gradient(to right, #00416a, #7096dd);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    background-color: #323232;
+}
+
+.card {
+    width: 100%;
+    border: none;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 #Image1 {
@@ -18,157 +24,110 @@ body {
 }
 
 .card-body {
-  background: linear-gradient(10deg, #2193b0, #6dd5ed);
+    background-color: whitesmoke;
+    border-radius: 4px;
 }
 
-@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
-  .card-body {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    color: rgb(0, 0, 0);
-  }
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #addBtn {
-  background: #166aaa;
-  color: #ffffff;
+    outline: none;
+    background: #166aaa;
+    color: #ffffff;
 }
 
-#addBtn:hover {
-  color: #000000;
-  background: #1dfff0;
-  box-shadow: 0 0 30px #1dfff0;
-  border-color: white;
-}
-
-.loginbox {
-  width: 320px;
-  height: 420px;
-  background: #000;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
+.note-textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #323232;
 }
 
 h1 {
-  margin: 0;
-  padding: 0 0 20px;
-  text-align: center;
-  font-size: 22px;
+    color: white;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
 }
 
-.loginbox p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-.loginbox input {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.loginbox input[type="text"],
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
-
-.loginbox input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #fb2525;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
-
-.loginbox input[type="submit"]:hover {
-  cursor: pointer;
-  background: #ffc107;
-  color: #000;
-}
-
-.loginbox a {
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
-  color: darkgrey;
-}
-
-.loginbox a:hover {
-  color: #ffc107;
+label {
+    color: white;
 }
 
 #addBtn:focus {
-  background-color: #7096dd;
+    background-color: #7096dd;
+    outline: none;
 }
 
 #emptyFormToast {
-  display: none;
-  position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  background-color: #ffdddd;
-  border: 1px solid #f00;
-  border-radius: 5px;
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #ffdddd;
+    border: 1px solid #f00;
+    border-radius: 5px;
+}
+
+.filter-div {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    gap: 18px;
 }
 
 .unchecked {
-  color: white;
+    cursor: pointer;
 }
 
 .checked {
-  color: yellow;
+    color: yellow;
 }
 
 .noteHead {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .fa-star {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .star-important {
-  color: gold;
+    color: gold;
 }
-
 
 /* Search box */
-.search-bar{
-  gap: 0.25rem;
+.search-bar {
+    gap: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-input{
-  max-width: 300px;
-  width: 100%;
-  font-size: 1rem;
+input {
+    outline: none;
+    max-width: 300px;
+    width: 100%;
+    font-size: 1rem;
 }
 
-.hide{
-  display: none;
+.hide {
+    display: none;
+}
+
+.notes {
+    justify-content: center;
 }
