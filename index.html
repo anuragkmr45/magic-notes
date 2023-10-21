@@ -26,21 +26,23 @@
 
 <body bgcolor="khaki">
   <div class="container my-3">
-    <h1 style="color: rgb(162, 240, 255)">Welcome To Magic Notes</h1>
+    <h1>Welcome To Magic Notes</h1>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Please add your note</h5>
         <form action="" id="noteForm">
-          <div class="form-group">
-            <textarea class="form-control" id="addTxt" rows="3" placeholder="enter your notes here"></textarea>
+          <div class="addNote">
+            <textarea class="note-textarea" id="addTxt" rows="3" placeholder="enter your notes here"></textarea>
           </div>
           <button class="btn btn-primary" id="addBtn">Add Note</button>
         </form>
       </div>
     </div>
-    <hr />
-    <h1 style="color: rgb(162, 240, 255)">Your Notes</h1>
-    <label for="sortNotesDropdown" style="color: rgb(162, 240, 255)">Sort notes by:</label>
+    <br/>
+    <br/>
+    <h1>Your Notes</h1>
+    <div class="filter-div">
+    <label for="sortNotesDropdown">Sort notes by:</label>
     <select id="sortNotesDropdown" onchange="sortNotes(this.value)">
       <option value="dateAsc">Date Ascending</option>
       <option value="dateDesc">Date Descending</option>
@@ -49,11 +51,14 @@
     </select>
 
     <div class="search-bar">
-      <label for="search" style="color: rgb(162, 240, 255)">Search</label>
+      <label for="search">Search</label>
       <input type="search" id="seacrh" note-search>
-    <hr />
-    <div id="notes" class="row container-fluid"></div>
+    </div>
   </div>
+
+    <br />
+    <br />
+    <div id="notes" class="notes row container-fluid"></div>
   <div id="emptyFormToast">Note is empty!</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
