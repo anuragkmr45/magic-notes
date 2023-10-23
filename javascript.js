@@ -65,7 +65,7 @@ function displayNotes() {
                         <hr color="#fff"/>
                         <p class="card-text"> ${element.text}</p>
 
-                        <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
+                        <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-danger">Delete Note</button>
                     </div>
                 </div>`;
     });
