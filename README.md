@@ -50,28 +50,33 @@ We welcome contributions from developers of all levels of experience. To contrib
 
 2. **Clone the Repository**: Use Git to clone the forked repository to your local machine.
    
-    ```
+    ``` bash
     git clone https://github.com/CareerDevelopmentHub/magic-notes.git
     ```
 
 3. **Create a Branch**: Create a new branch for your contribution
-    ```
+    ``` bash
     git checkout -b feature/my-contribution
     ```
 
 4. **Make Changes**: Make your desired changes to the project. This can include bug fixes, feature additions, documentation improvements, etc
 
 5. **Commit Changes**: Commit your changes with a descriptive commit message.
-    ```
+    ``` bash
     git commit -m "Add feature: my contribution"
     ```
 
 6. **Push Changes**: Push your changes to your forked repository on GitHub.
-    ```
+    ``` bash
     git push origin feature/my-contribution
     ```
 
 7. **Create a Pull Request**: Go to the original project's GitHub page and click the "New Pull Request" button. Compare your branch to the main branch and create the pull request.
+
+## Tech Stack
+Magic Notes utilizes the following technologies:
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap,javascript)](https://skillicons.dev)
 
 
 ## About the Project
@@ -82,9 +87,10 @@ Add note: This section contains a form where users can enter and add new notes. 
 Your notes: This section lists all of the user's saved notes. Each note is displayed as a card with the note content and a button for deleting the note.
 The app also uses JavaScript to handle the following functionality:
 
-1)Validates the note form before adding a new note.
-2)Displays a toast notification if the note form is empty.
-3)Deletes a note when the user clicks the delete button.
-4)Overall, the HTML code you provided is for a simple but functional notes app. It uses Bootstrap to create a 5)5)5)responsive and visually appealing layout, and it uses JavaScript to handle basic functionality such as form validation and note deletion.
+1. Validates the note form before adding a new note.
+2. Displays a toast notification if the note form is empty.
+3. Deletes a note when the user clicks the delete button.
+4. Overall, this is a simple but functional notes app. 
+5. It uses Bootstrap to create a responsive and visually appealing layout, and it uses JavaScript to handle basic functionality such as form validation and note deletion.
 
 ![image](Hactoberfest.png)
