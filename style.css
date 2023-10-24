@@ -24,15 +24,15 @@ body {
 
 #Image1 {
   border-radius: 50%;
-  height: 15rem;
-  width: 15rem;
+  height:6rem;
+  width: 6rem;
   display: block;
   margin-top: 10px;
 }
 
 .card-body {
-    background-color: whitesmoke;
-    border-radius: 4px;
+    background-color: rgb(193, 175, 175);
+    border-radius: 10px;
     padding: 20px;
 }
 
@@ -41,6 +41,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#addBtn {
+    
+    background: #166aaa;
+    color: #ffffff;
 }
 
 .note-textarea {
@@ -52,17 +58,19 @@ body {
     border: 1px solid #323232;
 }
 
-h1 {
-    color: white;
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 500;
-}
+
 
 label {
     color: white;
+}
+
+#addBtn:hover {
+    background-color: #eceff4;
+    color: blue;
+    font-weight: 500;
+    border: 2px solid black;
+    transform:scale(0.9);
+    outline: none;
 }
 
 #emptyFormToast {
@@ -128,4 +136,7 @@ input {
 
 .notes {
     justify-content: center;
+}
+#sortNotes{
+    margin-left: 60px;
 }
