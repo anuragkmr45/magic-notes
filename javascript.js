@@ -46,7 +46,7 @@ function displayNotes() {
 
     notesObj.forEach(function (element, index) {
         let className = element.fav
-            ? `fa fa-star checked`
+            ? `fa-solid fa-star checked`
             : `fa-regular fa-star-o unchecked`;
         let date = new Date(element.timestamp);
         let dateLocale = date.toLocaleDateString();
@@ -59,7 +59,7 @@ function displayNotes() {
                     <div class="card-body">
                         <div class="noteHead">
                           <h5 class="card-title">Note ${index + 1}</h5>
-                          <div><i id="favFlag" class="${className}" onClick=saveFavorite(${index})></i></div>
+                          <div><i id="favFlag" class="${starClass} ${className}" onClick=saveFavorite(${index})></i></div>
                         </div>
                         <h8>Posted: ${dateLocale} - ${timeLocale}</h8>
                         <hr color="#fff"/>
