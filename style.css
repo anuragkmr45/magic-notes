@@ -4,7 +4,7 @@ body {
     background-size: cover;
     background-position: center;
     font-family: Comic Sans MS, Comic Sans, cursive;
-    background-color: #323232;
+    background-color: black;
 }
 
 .card {
@@ -16,16 +16,16 @@ body {
 
 #Image1 {
   border-radius: 50%;
-  height: 15rem;
-  width: 15rem;
+  height:6rem;
+  width: 6rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .card-body {
-    background-color: whitesmoke;
-    border-radius: 4px;
+    background-color: rgb(193, 175, 175);
+    border-radius: 10px;
 }
 
 .container {
@@ -36,7 +36,7 @@ body {
 }
 
 #addBtn {
-    outline: none;
+    
     background: #166aaa;
     color: #ffffff;
 }
@@ -50,21 +50,18 @@ body {
     border: 1px solid #323232;
 }
 
-h1 {
-    color: white;
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 500;
-}
+
 
 label {
     color: white;
 }
 
-#addBtn:focus {
-    background-color: #7096dd;
+#addBtn:hover {
+    background-color: #eceff4;
+    color: blue;
+    font-weight: 500;
+    border: 2px solid black;
+    transform:scale(0.9);
     outline: none;
 }
 
@@ -130,4 +127,7 @@ input {
 
 .notes {
     justify-content: center;
+}
+#sortNotes{
+    margin-left: 60px;
 }
