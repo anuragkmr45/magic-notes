@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="style.css" />
     </head>
 
-    <body bgcolor="khaki">
+    <body>
 
         <div class="container" id="header">
             <img src="notes.png" alt="My Notes" id="Image1">
@@ -22,10 +22,14 @@
         <div class="container my-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Please add your note</h5>
-                    <form action="" id="noteForm">
-                        <div class="addNote">
-                            <textarea class="note-textarea" id="addTxt" rows="3" placeholder="enter your notes here"></textarea>
+                    <form>
+                        <div class="form-group">
+                            <label for="addTitle">Please add your note title</label>
+                            <input type="text" class="form-control note-title" id="addTitle" placeholder="Enter note title">
+                        </div>
+                        <div class="form-group">
+                            <label for="addTxt">Please add your notes</label>
+                            <textarea class="form-control note-textarea" id="addTxt" rows="3" placeholder="Enter your notes here"></textarea>
                         </div>
                         <button class="btn btn-primary" id="addBtn">Add Note</button>
                     </form>
@@ -35,7 +39,7 @@
             <h2 style="color: rgb(162, 240, 255);">Your Notes</h2>
 
             <div class="filter-div">
-                <label for="sortNotesDropdown">Sort notes by:</label>
+                <label for="sortNotesDropdown" style="color: white;">Sort notes by:</label>
                 <select id="sortNotesDropdown" onchange="sortNotes(this.value)">
                     <option value="dateAsc">Date Ascending</option>
                     <option value="dateDesc">Date Descending</option>
@@ -43,8 +47,8 @@
                     <option value="wordCount">Word Count</option>
                 </select>
                 <div class="search-bar">
-                    <label for="search">Search</label>
-                    <input type="search" id="seacrh" note-search>
+                    <label for="search" style="color: white;">Search</label>
+                    <input type="search" id="search" class="form-control note-search">
                 </div>
             </div>
 
