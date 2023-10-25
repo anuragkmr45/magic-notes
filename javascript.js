@@ -8,8 +8,9 @@ addBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
     let addTxt = document.getElementById("addTxt");
+    let addTitle = document.getElementById("addTitle");
 
-    if (!addTxt.value.trim()) {
+    if (!addTxt.value.trim() && !addTitle.value.trim()) {
         const toast = document.getElementById("emptyFormToast");
         toast.style.display = "block";
         setTimeout(() => {
@@ -27,6 +28,7 @@ addBtn.addEventListener("click", function (e) {
     }
 
     let note = {
+        title: addTitle.value,
         text: addTxt.value,
         timestamp: new Date().toJSON(),
         important: false,
@@ -36,7 +38,7 @@ addBtn.addEventListener("click", function (e) {
 
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addTxt.value = "";
-    //   console.log(notesObj);
+    addTitle.value = "";
     showNotes();
 });
 
@@ -56,18 +58,18 @@ function displayNotes() {
             : "fa-regular fa-star";
         html += `
             <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="noteHead">
-                          <h5 class="card-title">Note ${index + 1}</h5>
-                          <div><i id="favFlag" class="${starClass} ${className}" onClick=saveFavorite(${index})></i></div>
-                        </div>
-                        <h8>Posted: ${dateLocale} - ${timeLocale}</h8>
-                        <hr color="#fff"/>
-                        <p class="card-text"> ${element.text}</p>
-
-                        <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-danger">Delete Note</button>
+                <div class="card-body">
+                    <div class="noteHead">
+                        <h5 class="card-title">${element.title}</h5>
+                        <div><i id="favFlag" class="${starClass} ${className}" onClick=saveFavorite(${index})></i></div>
                     </div>
-                </div>`;
+                    <h6 style="font-size: small;">Posted: ${dateLocale} - ${timeLocale}</h6>
+                    <hr color="#fff"/>
+                    <p class="card-text"> ${element.text}</p>
+
+                    <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-danger delBtn">Delete Note</button>
+                </div>
+            </div>`;
     });
     let notesElm = document.getElementById("notes");
     if (notesObj.length != 0) {
@@ -180,7 +182,7 @@ function sortByWordCount(a, b) {
     return a.text.split(" ").length - b.text.split(" ").length;
 }
 
-//Search the note
+// Search the note
 const searchNote = document.querySelector("[note-search]");
 
 searchNote.addEventListener("input", (elem) => {
