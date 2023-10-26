@@ -183,7 +183,8 @@ function sortByWordCount(a, b) {
 }
 
 // Search the note
-const searchNote = document.querySelector("[note-search]");
+const searchNote = document.getElementsByClassName("note-search")[0];
+console.log(searchNote);
 
 searchNote.addEventListener("input", (elem) => {
     const values = elem.target.value.toLowerCase();
@@ -191,6 +192,9 @@ searchNote.addEventListener("input", (elem) => {
     Array.from(noteCards).forEach((noteCard) => {
         const isAvailable = noteCard
             .getElementsByTagName("p")[0]
+            .innerText.toLowerCase()
+            .includes(values) || noteCard
+            .getElementsByClassName("card-title")[0]
             .innerText.toLowerCase()
             .includes(values);
         noteCard.classList.toggle("hide", !isAvailable);
