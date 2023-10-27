@@ -5,6 +5,11 @@ body {
     background-position: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     background-color: black;
+    font-size: 1.5rem;
+}
+
+.page{
+    padding: 100px 0px 100px 0px;
 }
 
 #header {
@@ -12,6 +17,9 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background-color: rgb(25, 60, 202);
+    border: 3px solid aliceblue;
+    border-radius: 10px;
 }
 
 .card {
@@ -23,15 +31,16 @@ body {
 }
 
 #Image1 {
-  border-radius: 50%;
-  height:6rem;
+  border-radius: 10px;
+  height:6.2rem;
   width: 6rem;
   display: block;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .card-body {
-    background-color: rgb(193, 175, 175);
+    background-color: rgb(25, 60, 202);
+    border: 3px solid aliceblue;
     border-radius: 10px;
     padding: 20px;
 }
@@ -44,9 +53,8 @@ body {
 }
 
 #addBtn {
-    
-    background: #166aaa;
-    color: #ffffff;
+    background: #15dde8;
+    color: #000;
 }
 
 .note-textarea {
@@ -85,14 +93,19 @@ label {
     border-radius: 5px;
 }
 
+
 .filter-div {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
-    gap: 18px;
+    gap: 10px;
     margin-bottom: 3rem;
 }
-
+#sortNotesDropdown{
+    margin-right: 30px;
+}
 .unchecked {
     cursor: pointer;
 }
@@ -125,7 +138,8 @@ label {
 
 input {
     outline: none;
-    max-width: 300px;
+    max-width: 450px;
+    height:40px;
     width: 100%;
     font-size: 1rem;
 }
