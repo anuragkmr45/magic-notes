@@ -57,6 +57,20 @@ body {
     color: #000;
 }
 
+.delBtn {
+    background-color: #c21e1e;
+    columns: #ffffff;
+}
+
+.note-title {
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #323232;
+}
+
 .note-textarea {
     width: 100%;
     outline: none;
@@ -69,12 +83,22 @@ body {
 
 
 label {
-    color: white;
+    font-size: large;
+    color: black;
 }
 
 #addBtn:hover {
     background-color: #eceff4;
     color: blue;
+    font-weight: 500;
+    border: 2px solid black;
+    transform:scale(0.9);
+    outline: none;
+}
+
+.delBtn:hover {
+    background-color: #eceff4;
+    color: red;
     font-weight: 500;
     border: 2px solid black;
     transform:scale(0.9);
