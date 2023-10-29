@@ -146,6 +146,19 @@ label {
     justify-content: center;
     align-items: center;
 }
+#sortNotesDropdown {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#sortNotesDropdown option {
+    background-color: #333;
+    color: white;
+}
 
 input {
     outline: none;
